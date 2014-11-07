@@ -5,8 +5,8 @@ Auto-sizing TextareaSurface for famo.us.
 
 ![Screenshot](screenshot.gif)
 
-TextareSurface for famo.us that emits an event everytime the 'ideal' height for fitting the
-content changes. This event can then be used to set the size of the Surface to fit the content.
+TextareaSurface for famo.us that emits an event everytime the 'ideal' height for fitting the
+content changes. This event can then be used to set the size of the Surface to fit the content. AutosizeTextareaSurface is inherited from TextareaSurface.
 
 ## Demos
 
@@ -32,8 +32,6 @@ var AutosizeTextareaSurface = require('famous-autosizetextarea/AutosizeTextareaS
 
 // create text-area
 var textArea = new AutosizeTextareaSurface({
-	origin: [0, 1],
-	align: [0, 1],
 	classes: ['mytextarea'],
 	size: [undefined, 30] // initial size
 });
