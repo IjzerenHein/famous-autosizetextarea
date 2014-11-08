@@ -42,16 +42,6 @@ define(function(require, exports, module) {
     // hidden TextArea surface.
     //
     function _onValueChanged(event) {
-        var value = event.currentTarget.value;
-        if (this._hiddenTextarea._currentTarget) {
-            this._hiddenTextarea._currentTarget.value = value;
-        }
-        else {
-            if (value === '') {
-                value = ' ';
-            }
-            this._hiddenTextarea.setValue(value);
-        }
         this._heightInvalidated = true;
     }
 
@@ -99,7 +89,8 @@ define(function(require, exports, module) {
         }
 
         // Caluclate preferred height
-        if (this._hiddenTextarea._currentTarget && this._heightInvalidated) {
+        if (this._currentTarget && this._hiddenTextarea._currentTarget && this._heightInvalidated) {
+            this._hiddenTextarea._currentTarget.value = this._currentTarget.value;
             this._heightInvalidated = false;
 
             // Calculate ideal scrollheight
@@ -188,7 +179,6 @@ define(function(require, exports, module) {
     var oldSetValue = AutosizeTextareaSurface.prototype.setValue;
     AutosizeTextareaSurface.prototype.setValue = function setValue(str) {
         this._heightInvalidated = true;
-        this._hiddenTextarea.setValue(str);
         return oldSetValue.call(this, str);
     };
     var oldSetWrap = AutosizeTextareaSurface.prototype.setWrap;
