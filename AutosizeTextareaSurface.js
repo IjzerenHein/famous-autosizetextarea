@@ -5,10 +5,9 @@
  *
  * @author: Hein Rutjes (IjzerenHein)
  * @license MIT
- * @copyright Gloey Apps, 2014
+ * @copyright Gloey Apps, 2014 - 2015
  */
 
-/*global define*/
 /*eslint no-use-before-define:0*/
 
 /**
@@ -216,7 +215,9 @@ define(function(require, exports, module) {
         }
         target.value = this._value;
         target.name = this._name;
-        target.wrap = this._wrap;
+        if (this._wrap !== ''){
+            target.wrap = this._wrap;
+        }
         if (this._cols !== ''){
             target.cols = this._cols;
         }

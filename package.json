@@ -1,6 +1,6 @@
 {
   "name": "famous-autosizetextarea",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/IjzerenHein/famous-autosizetextarea",
   "repository": {
     "type": "git",
@@ -9,7 +9,6 @@
   "browserify": {
     "transform": [
       "deamdify",
-      "famousify",
       "brfs"
     ]
   },
@@ -42,11 +41,9 @@
     "brfs": "latest",
     "browserify": "latest",
     "deamdify": "latest",
-    "famousify": "latest",
     "grunt": "latest",
     "grunt-eslint": "latest",
-    "grunt-jscs": "latest",
-    "grunt-jsdoc-to-markdown": "latest"
+    "grunt-jscs": "latest"
   },
   "files": [
     "AutosizeTextareaSurface.js",
