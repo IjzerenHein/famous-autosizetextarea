@@ -8,8 +8,6 @@
  * @copyright Gloey Apps, 2014 - 2015
  */
 
-/*eslint no-use-before-define:0*/
-
 /**
  * @module
  */
@@ -197,6 +195,12 @@ define(function(require, exports, module) {
         this._heightInvalidated = true;
         this._hiddenTextarea.setRows(num);
         return oldSetRows.call(this, num);
+    };
+    var oldSetPlaceholder = AutosizeTextareaSurface.prototype.setPlaceholder;
+    AutosizeTextareaSurface.prototype.setPlaceholder = function setPlaceholder(str) {
+        this._heightInvalidated = true;
+        this._hiddenTextarea.setPlaceholder(str);
+        return oldSetPlaceholder.call(this, str);
     };
 
     /**
