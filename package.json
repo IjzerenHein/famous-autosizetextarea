@@ -6,12 +6,6 @@
     "type": "git",
     "url": "git://github.com/IjzerenHein/famous-autosizetextarea.git"
   },
-  "browserify": {
-    "transform": [
-      "deamdify",
-      "brfs"
-    ]
-  },
   "author": {
     "name": "Hein Rutjes <hrutjes@gmail.com>"
   },
@@ -38,9 +32,6 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "brfs": "latest",
-    "browserify": "latest",
-    "deamdify": "latest",
     "grunt": "latest",
     "grunt-eslint": "latest",
     "grunt-jscs": "latest"
@@ -48,5 +39,10 @@
   "files": [
     "AutosizeTextareaSurface.js",
     "LICENSE"
-  ]
+  ],
+  "browserify": {
+    "transform": [
+      "deamdify"
+    ]
+  }
 }
