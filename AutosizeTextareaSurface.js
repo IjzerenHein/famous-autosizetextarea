@@ -5,7 +5,7 @@
  *
  * @author: Hein Rutjes (IjzerenHein)
  * @license MIT
- * @copyright Gloey Apps, 2014 - 2015
+ * @copyright Gloey Apps, 2014 - 2016
  */
 
 /**
@@ -214,9 +214,7 @@ define(function(require, exports, module) {
      * @param {Node} target document parent of this container
      */
     AutosizeTextareaSurface.prototype.deploy = function deploy(target) {
-        if (this._placeholder !== ''){
-            target.placeholder = this._placeholder;
-        }
+        target.placeholder = this._placeholder || '';
         target.value = this._value;
         target.name = this._name;
         if (this._wrap !== ''){
